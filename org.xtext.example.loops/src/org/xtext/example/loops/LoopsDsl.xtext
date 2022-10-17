@@ -1,0 +1,11 @@
+grammar org.xtext.example.loops.LoopsDsl with org.eclipse.xtext.common.Terminals
+
+generate loopsDsl "http://www.xtext.org/example/loops/LoopsDsl"
+
+Script: 'script' scriptName=EXPRESSION repeat=Repeat; 
+
+
+Repeat: 'repeat' '{' expression=EXPRESSION '}' num=INT 'times';
+
+terminal EXPRESSION: ('a'..'z'|'A'..'Z'|'_'|'"'|'('|')'|'.'|',') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'"'|'('|')'|'.'|',')*;
+
